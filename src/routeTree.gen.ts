@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DenunciasRouteImport } from './routes/denuncias'
+import { Route as ProtecaoRouteImport } from './routes/protecao'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as MateriaisIndexRouteImport } from './routes/materiais.index'
+import { Route as MateriaisSlugRouteImport } from './routes/materiais.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DenunciasRoute = DenunciasRouteImport.update({
+  id: '/denuncias',
+  path: '/denuncias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProtecaoRoute = ProtecaoRouteImport.update({
+  id: '/protecao',
+  path: '/protecao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MateriaisIndexRoute = MateriaisIndexRouteImport.update({
+  id: '/materiais/',
+  path: '/materiais/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MateriaisSlugRoute = MateriaisSlugRouteImport.update({
+  id: '/materiais/$slug',
+  path: '/materiais/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/denuncias': typeof DenunciasRoute
+  '/protecao': typeof ProtecaoRoute
+  '/sobre': typeof SobreRoute
+  '/materiais/$slug': typeof MateriaisSlugRoute
+  '/materiais/': typeof MateriaisIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/denuncias': typeof DenunciasRoute
+  '/protecao': typeof ProtecaoRoute
+  '/sobre': typeof SobreRoute
+  '/materiais/$slug': typeof MateriaisSlugRoute
+  '/materiais': typeof MateriaisIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/denuncias': typeof DenunciasRoute
+  '/protecao': typeof ProtecaoRoute
+  '/sobre': typeof SobreRoute
+  '/materiais/$slug': typeof MateriaisSlugRoute
+  '/materiais/': typeof MateriaisIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/denuncias'
+    | '/protecao'
+    | '/sobre'
+    | '/materiais/$slug'
+    | '/materiais/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/denuncias'
+    | '/protecao'
+    | '/sobre'
+    | '/materiais/$slug'
+    | '/materiais'
+  id:
+    | '__root__'
+    | '/'
+    | '/denuncias'
+    | '/protecao'
+    | '/sobre'
+    | '/materiais/$slug'
+    | '/materiais/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DenunciasRoute: typeof DenunciasRoute
+  ProtecaoRoute: typeof ProtecaoRoute
+  SobreRoute: typeof SobreRoute
+  MateriaisSlugRoute: typeof MateriaisSlugRoute
+  MateriaisIndexRoute: typeof MateriaisIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/denuncias': {
+      id: '/denuncias'
+      path: '/denuncias'
+      fullPath: '/denuncias'
+      preLoaderRoute: typeof DenunciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/protecao': {
+      id: '/protecao'
+      path: '/protecao'
+      fullPath: '/protecao'
+      preLoaderRoute: typeof ProtecaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/materiais/': {
+      id: '/materiais/'
+      path: '/materiais'
+      fullPath: '/materiais/'
+      preLoaderRoute: typeof MateriaisIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/materiais/$slug': {
+      id: '/materiais/$slug'
+      path: '/materiais/$slug'
+      fullPath: '/materiais/$slug'
+      preLoaderRoute: typeof MateriaisSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DenunciasRoute: DenunciasRoute,
+  ProtecaoRoute: ProtecaoRoute,
+  SobreRoute: SobreRoute,
+  MateriaisSlugRoute: MateriaisSlugRoute,
+  MateriaisIndexRoute: MateriaisIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
