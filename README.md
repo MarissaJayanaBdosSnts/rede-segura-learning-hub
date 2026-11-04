@@ -1,12 +1,4 @@
-# Rede Segura Learning Hub
 
-Aaaah, agora entendi, vida. 😭 Você está preocupada porque os outros grupos estão entregando um produto tecnológico de verdade, como site ou aplicativo, enquanto o grupo de vocês está caminhando para produzir apenas vídeos.
-
-E, sinceramente, acho que sua preocupação é válida.
-
-O projeto de vocês é de Redes de Computadores e tem uma proposta de educação em segurança digital. Não significa que vocês sejam obrigados a desenvolver um aplicativo complexo, mas seria interessante ter um produto que reúna e disponibilize os conteúdos.
-
-Minha sugestão seria transformar o projeto em um portal de educação em segurança digital.
 
 CyberSafety
 
