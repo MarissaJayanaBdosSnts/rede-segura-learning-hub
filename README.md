@@ -18,11 +18,6 @@ Seção com orientações de denúncia.
 
 Links para canais de proteção e ajuda.
 
-Isso aproveitaria o trabalho que o Yhaless quer fazer com vídeos, mas daria ao projeto um produto central, que poderia ser apresentado, disponibilizado e até comercializado como uma solução educativa.
-
-E vocês não precisariam abandonar os vídeos nem desenvolver tudo do zero.
-
-Mas quero te perguntar uma coisa: você sabe desenvolver um site básico com HTML, CSS e Python ou preferiria algo mais simples, sem precisar programar tanto? Assim consigo pensar numa proposta que vocês dois realmente consigam executar.
 
 This project was built with [Lovable](https://lovable.dev).
 
